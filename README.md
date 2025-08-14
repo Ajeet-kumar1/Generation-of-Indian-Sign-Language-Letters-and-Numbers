@@ -58,8 +58,15 @@ cd Generation-of-Indian-Sign-Language-Letters-and-Numbers
 ```bash
 conda create -n ISLGen python=3.12.2
 conda activate ISLGen
+````
+If you want run only on CPU then
+```
 pip install -r requirements.txt
+```
 
+else if want to install on GPU with cuda toolkit then
+```
+pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu124
 ```
 
 **3. Inference**
@@ -83,7 +90,7 @@ If you have your own dataset then add the path of dataset in ```main.py``` file 
 
 (ii) Now in the ```extract.py``` file in this line ```cam = cv2.VideoCapture("./my_video/class_0.mp4")``` add path of a class of video. And also change the root_path to store images corresponding to this class.
 
-(iii) Run the following command ```python3 extract.py```
+(iii) Run the following command ```python3 frame_extract.py```
 
 (iii) Repeat the step (ii) and (iii) for remaining classes. Now you have dataset in folder by name ```data```.
 
